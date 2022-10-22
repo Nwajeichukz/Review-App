@@ -51,6 +51,8 @@ const textE1 = document.getElementById('text');
 let currentProfile = 0;
 
 function getProfile () {
+    currentProfile = currentProfile >= reviews.length ? 0 : currentProfile < 0 ? reviews.length - 1: currentProfile; //TODO: Refactor this line
+
     const currentReview = reviews[currentProfile];
     
     imgE1.src = currentReview.img;
@@ -65,12 +67,12 @@ function getProfile () {
 
 canE1.forEach ((cans) => {
     cans.addEventListener('click', (e) => {
-        const style = e.currentTarget.classList;
-        if(style.contains('prev-btn')){
+        const {classList} = e.currentTarget;
+        if(classList.contains('prev-btn')){
             currentProfile--;
             getProfile();
         }
-        if(style.contains('next-btn')){
+        if(classList.contains('next-btn')){
             currentProfile++;
             getProfile();
         }
