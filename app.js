@@ -40,19 +40,30 @@ const reviews = [
 
     },
 ] 
-
-const canE1 = document.querySelectorAll('.can');
+// prev and next button class
+const btnE1 = document.querySelectorAll('.btn');
 
 const imgE1 = document.getElementById('img');
 const nameE1 = document.getElementById('name');
 const jobE1 = document.getElementById('job');
 const textE1 = document.getElementById('text');
 
+
 let currentProfile = 0;
 
 function getProfile () {
-    currentProfile = currentProfile >= reviews.length ? 0 : currentProfile < 0 ? reviews.length - 1: currentProfile; //TODO: Refactor this line
 
+    // keeping the review array functional
+    if(currentProfile >= reviews.length){
+        currentProfile = 0;
+    }
+    if(currentProfile < 0) {
+        currentProfile = reviews.length - 1;
+    }else {
+        currentProfile;
+    }
+
+    // the current review
     const currentReview = reviews[currentProfile];
     
     imgE1.src = currentReview.img;
@@ -65,8 +76,9 @@ function getProfile () {
 
 
 
-canE1.forEach ((cans) => {
-    cans.addEventListener('click', (e) => {
+btnE1.forEach ((btns) => {
+    btns.addEventListener('click', (e) => {
+
         const {classList} = e.currentTarget;
         if(classList.contains('prev-btn')){
             currentProfile--;
@@ -76,7 +88,6 @@ canE1.forEach ((cans) => {
             currentProfile++;
             getProfile();
         }
-
         
     })
 })
