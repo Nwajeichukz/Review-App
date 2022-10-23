@@ -54,14 +54,9 @@ let currentProfile = 0;
 function getProfile () {
 
     // keeping the review array functional
-    if(currentProfile >= reviews.length){
-        currentProfile = 0;
-    }
-    if(currentProfile < 0) {
-        currentProfile = reviews.length - 1;
-    }else {
-        currentProfile;
-    }
+    if(currentProfile >= reviews.length) currentProfile = 0;
+    
+    if(currentProfile < 0) currentProfile = reviews.length - 1;
 
     // the current review
     const currentReview = reviews[currentProfile];
