@@ -4,6 +4,9 @@
 
 body {
     background: linear-gradient(to left, #008899, #888);
+   
+}
+.review {
     display: grid;
     place-items: center;
     min-height: 100vh;
@@ -68,4 +71,5 @@ p{
 
 button {
     border-radius: 7px;
+    margin-bottom: 5px;
 }
