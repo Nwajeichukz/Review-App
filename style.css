@@ -9,9 +9,9 @@ body {
 .review {
     display: grid;
     place-items: center;
-    min-height: 100vh;
+    min-height: 80vh;
 }
-.main {
+.article {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,7 +20,7 @@ body {
     padding: 1rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
- .title{
+ .review_title{
     text-align: center;
 }
 
@@ -30,20 +30,20 @@ h2{
 
 }
 
-.underline {
+.review_title-underline {
     height: 0.25rem;
     width: 5rem;
     background: rgb(228, 62, 62);
     margin: auto;
 }
 
-.img-container {
+.article_img-container {
     /* position: relative; */
     width: 150px;
     height: 150px;
 }
 
-.pic {
+.article_img {
     height: 100%;
     width: 100%;
     display: block;

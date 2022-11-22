@@ -40,39 +40,37 @@ const reviews = [
 
     },
 ] 
-// prev and next button class
-const btnE1 = document.querySelectorAll('.btn');
 
-const imgE1 = document.getElementById('img');
-const nameE1 = document.getElementById('name');
-const jobE1 = document.getElementById('job');
-const textE1 = document.getElementById('text');
+const articleButtons = document.querySelectorAll('.btn');
+
+const articleImg = document.getElementById('img');
+const articleName = document.getElementById('name');
+const articleJob = document.getElementById('job');
+const articleText = document.getElementById('text');
 
 
 let currentProfile = 0;
 
-function getProfile () {
-
-    // keeping the review array functional
+const getProfile = () => {
     if(currentProfile >= reviews.length) currentProfile = 0;
     
     if(currentProfile < 0) currentProfile = reviews.length - 1;
 
-    // the current review
+
     const currentReview = reviews[currentProfile];
     
-    imgE1.src = currentReview.img;
+    articleImg.src = currentReview.img;
     //  you can use both textContent and innerHtml
-    nameE1.textContent = currentReview.name
-    jobE1.innerHTML = currentReview.job
-    textE1.innerHTML = currentReview.text
+    articleName.textContent = currentReview.name
+    articleJob.innerHTML = currentReview.job
+    articleText.innerHTML = currentReview.text
     
 };
 
 
 
-btnE1.forEach ((btns) => {
-    btns.addEventListener('click', (e) => {
+articleButtons.forEach ((articlesBtn) => {
+    articlesBtn.addEventListener('click', (e) => {
 
         const {classList} = e.currentTarget;
         if(classList.contains('prev-btn')){
