@@ -67,8 +67,6 @@ const getProfile = () => {
     
 };
 
-
-
 articleButtons.forEach ((articlesBtn) => {
     articlesBtn.addEventListener('click', (e) => {
 
